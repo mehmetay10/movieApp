@@ -1,24 +1,21 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Moov Movie App
 
-# Getting Started
+MovieApp, React Native kullanılarak geliştirilmiş basit bir film listeleme uygulamasıdır. Kullanıcılar popüler filmleri görüntüleyebilir ve detaylarına bakabilir.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+---
 
-## Step 1: Start the Metro Server
+## Başlangıç
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+Bu projeyi çalıştırmak için öncelikle bilgisayarınızda [Node.js](https://nodejs.org/) ve [Yarn](https://yarnpkg.com/) yüklü olmalıdır.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+Projeyi klonladıktan sonra bağımlılıkları yükleyin ve uygulamayı başlatın.
 
 ```bash
-# using npm
-npm start
-
-# OR using Yarn
+git clone https://github.com/mehmetay10/movieApp.git
+cd movieApp
+yarn install
 yarn start
-```
 
-## Step 2: Start your Application
 
 Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 

@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
   },
   favoriteButton: {
     position: 'absolute',
-    top: hp(19),
+    top: hp(18),
     right: wp(4),
     backgroundColor: '#FFFFFf',
     borderRadius: wp(12),
