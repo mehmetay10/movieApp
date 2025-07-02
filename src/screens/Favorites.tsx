@@ -17,6 +17,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeFavorite } from '../store/favorites/favoritesActions';
 import MovieCard from '../components/MovieCard';
 import ErrorMessage from '../components/ErrorMessage';
+import { wp, hp, fp } from '../utils'
 
 const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -147,14 +148,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingVertical: 15,
+    paddingHorizontal: wp(5),
+    paddingVertical: hp(2),
     borderBottomWidth: 1,
     borderBottomColor: '#f0f0f0',
   },
   backButton: {
-    width: 40,
-    height: 40,
+    width: wp(10),
+    height: wp(10),
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -163,26 +164,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   headerTitle: {
-    fontSize: 24,
+    fontSize: fp(3),
     fontWeight: 'bold',
     color: '#333',
   },
   countContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 5,
+    marginTop: hp(0.7),
   },
   movieCount: {
-    fontSize: 14,
+    fontSize: fp(1.7),
     color: '#666',
   },
   separator: {
-    fontSize: 14,
+    fontSize: fp(1.7),
     color: '#666',
-    marginHorizontal: 8,
+    marginHorizontal: wp(2),
   },
   tvCount: {
-    fontSize: 14,
+    fontSize: fp(1.7),
     color: '#666',
   },
   tabBar: {
@@ -194,10 +195,10 @@ const styles = StyleSheet.create({
   tab: {
     flex: 1,
     alignItems: 'center',
-    paddingVertical: 12,
+    paddingVertical: hp(1.5),
   },
   tabText: {
-    fontSize: 16,
+    fontSize: fp(2),
     color: '#888',
     fontWeight: 'bold',
   },
@@ -210,8 +211,8 @@ const styles = StyleSheet.create({
   },
   styledCard: {
     backgroundColor: '#fff',
-    borderRadius: 18,
-    marginBottom: 18,
+    borderRadius: wp(4.5),
+    marginBottom: hp(2.3),
     overflow: 'hidden',
     shadowColor: '#7B61FF',
     shadowOffset: { width: 0, height: 4 },
@@ -222,9 +223,9 @@ const styles = StyleSheet.create({
   },
   styledPoster: {
     width: '100%',
-    height: 200,
-    borderTopLeftRadius: 18,
-    borderTopRightRadius: 18,
+    height: hp(26),
+    borderTopLeftRadius: wp(4.5),
+    borderTopRightRadius: wp(4.5),
     backgroundColor: '#eee',
   },
   styledInfoBox: {
@@ -232,28 +233,28 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    padding: 10,
+    padding: hp(1.3),
     backgroundColor: 'rgba(0,0,0,0.55)',
-    borderBottomLeftRadius: 18,
-    borderBottomRightRadius: 18,
+    borderBottomLeftRadius: wp(4.5),
+    borderBottomRightRadius: wp(4.5),
   },
   styledTitle: {
-    fontSize: 18,
+    fontSize: fp(2.2),
     fontWeight: 'bold',
     color: '#fff',
-    marginBottom: 4,
+    marginBottom: hp(0.5),
   },
   styledRating: {
-    fontSize: 15,
+    fontSize: fp(1.8),
     color: '#fff',
   },
   styledRemoveIcon: {
     position: 'absolute',
-    top: 12,
-    right: 12,
+    top: hp(1.5),
+    right: wp(3),
     backgroundColor: 'rgba(242, 74, 74, 0.85)',
-    borderRadius: 20,
-    padding: 4,
+    borderRadius: wp(5),
+    padding: hp(0.5),
     zIndex: 10,
     alignItems: 'center',
     justifyContent: 'center',
@@ -266,10 +267,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 40,
+    padding: hp(5),
   },
   emptyTabText: {
-    fontSize: 18,
+    fontSize: fp(2.2),
     color: '#aaa',
     textAlign: 'center',
   },

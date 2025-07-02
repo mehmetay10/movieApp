@@ -22,6 +22,7 @@ import useFetchMovieDetail from '../hooks/useFetchMovieDetail';
 import MovieCard from '../components/MovieCard';
 import ArtistCard from '../components/ArtistCard';
 import LoadingSpinner from '../components/LoadingSpinner';
+import { wp, hp, fp } from '../utils'
 
 const { width } = Dimensions.get('window');
 const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
@@ -116,7 +117,7 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ route, navigation }) => {
         <TouchableOpacity style={styles.headerBack} onPress={() => navigation.goBack()}>
           <Icon name="arrow-back" size={28} color="#222" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Movie detail</Text>
+        <Text style={styles.headerTitle}>Movie Detail</Text>
         <View style={{ width: 40 }} />
       </View>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
@@ -198,37 +199,37 @@ const styles = StyleSheet.create({
   bannerContainer: {
     position: 'relative',
     width: '100%',
-    height: 220,
+    height: hp(28),
     backgroundColor: '#eee',
-    marginBottom: 10,
+    marginBottom: hp(1.3),
   },
   banner: {
     width: '100%',
-    height: 220,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
+    height: hp(28),
+    borderBottomLeftRadius: wp(5),
+    borderBottomRightRadius: wp(5),
   },
   favoriteButton: {
     position: 'absolute',
-    top: 150,
-    right: 16,
+    top: hp(19),
+    right: wp(4),
     backgroundColor: '#FFFFFf',
-    borderRadius: 40,
-    width: 48,
-    height: 48,
+    borderRadius: wp(12),
+    width: wp(12),
+    height: wp(12),
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 4,
   },
   title: {
-    fontSize: 24,
+    fontSize: fp(3),
     fontWeight: 'bold',
     color: '#222',
-    marginBottom: 20,
+    marginBottom: hp(2.5),
     textAlign: 'center',
   },
   infoBlock: {
-    marginBottom: 5,
+    marginBottom: hp(0.7),
   },
   infoRow: {
     flexDirection: 'row',
@@ -238,50 +239,50 @@ const styles = StyleSheet.create({
   infoValue: {
     flex: 1,
     textAlign: 'center',
-    fontSize: 15,
+    fontSize: fp(1.8),
     fontWeight: 'bold',
     color: '#222',
   },
   infoLabel: {
     flex: 1,
     textAlign: 'center',
-    fontSize: 13,
+    fontSize: fp(1.5),
     color: '#aaa',
     fontWeight: '500',
-    marginTop: 2,
+    marginTop: hp(0.2),
   },
   sectionTitle: {
-    fontSize: 18,
+    fontSize: fp(2.2),
     fontWeight: 'bold',
     color: '#222',
-    marginTop: 18,
-    marginBottom: 6,
+    marginTop: hp(2.3),
+    marginBottom: hp(0.8),
     textAlign: 'left',
   },
   description: {
-    fontSize: 14,
+    fontSize: fp(1.6),
     color: '#888',
     textAlign: 'left',
   },
   similarMovie: {
-    marginRight: 12,
-    borderRadius: 10,
+    marginRight: wp(3),
+    borderRadius: wp(2.5),
     overflow: 'hidden',
-    width: 90,
-    height: 130,
+    width: wp(24),
+    height: hp(17),
     backgroundColor: '#eee',
   },
   similarPoster: {
-    width: 90,
-    height: 130,
-    borderRadius: 10,
+    width: wp(24),
+    height: hp(17),
+    borderRadius: wp(2.5),
   },
   artistCircle: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: wp(16),
+    height: wp(16),
+    borderRadius: wp(8),
     backgroundColor: '#fff',
-    marginRight: 12,
+    marginRight: wp(3),
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 2,
@@ -289,35 +290,35 @@ const styles = StyleSheet.create({
     borderColor: '#eee',
   },
   artistImg: {
-    width: 56,
-    height: 56,
-    borderRadius: 28,
+    width: wp(14),
+    height: wp(14),
+    borderRadius: wp(7),
   },
   headerBar: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingTop: 1,
+    paddingHorizontal: wp(4),
+    paddingTop: hp(0.2),
     backgroundColor: '#fff',
     borderBottomWidth: 1,
     borderBottomColor: '#f0f0f0',
     zIndex: 20,
   },
   headerBack: {
-    width: 40,
-    height: 40,
+    width: wp(10),
+    height: wp(10),
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 60,
+    marginTop: hp(7.5),
   },
   headerTitle: {
     flex: 1,
     textAlign: 'center',
-    fontSize: 22,
+    fontSize: fp(2.7),
     fontWeight: 'bold',
     color: '#222',
-    marginTop: 55,
+    marginTop: hp(7),
   },
 });
 

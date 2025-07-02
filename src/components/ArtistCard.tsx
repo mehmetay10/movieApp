@@ -1,6 +1,7 @@
 // Bu component AI desteği ile geliştirildi (ChatGPT)
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { wp, hp, fp } from '../utils'
 
 interface ArtistCardProps {
   artist: {
@@ -28,31 +29,31 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist, onPress }) => {
 
 const styles = StyleSheet.create({
   artistCircle: {
-    width: 80,
-    height: 100,
-    borderRadius: 40,
+    width: wp(21),
+    height: hp(13),
+    borderRadius: wp(10.5),
     backgroundColor: '#fff',
-    marginRight: 16,
+    marginRight: wp(4),
     justifyContent: 'flex-start',
     alignItems: 'center',
     elevation: 2,
     borderWidth: 1,
     borderColor: '#eee',
-    paddingTop: 8,
-    paddingBottom: 8,
+    paddingTop: hp(1),
+    paddingBottom: hp(1),
   },
   artistImg: {
-    width: 64,
-    height: 64,
-    borderRadius: 32,
+    width: wp(17),
+    height: wp(17),
+    borderRadius: wp(8.5),
   },
   artistName: {
-    fontSize: 14,
+    fontSize: fp(1.7),
     color: '#222',
     fontWeight: 'bold',
-    marginTop: 8,
+    marginTop: hp(1),
     textAlign: 'center',
-    width: 72,
+    width: wp(18),
   },
 });
 

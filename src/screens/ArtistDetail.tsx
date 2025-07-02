@@ -40,7 +40,7 @@ const ArtistDetail: React.FC<ArtistDetailScreenProps> = ({ route, navigation }) 
       <TouchableOpacity style={styles.headerBack} onPress={() => navigation.goBack()}>
           <Icon name="arrow-back" size={28} color="#222" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Artist detail</Text>
+        <Text style={styles.headerTitle}>Artist Detail</Text>
         <View style={{ width: 40 }} />
       </View>
       {/* Profil ve Bilgi Kutusu */}

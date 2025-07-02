@@ -22,6 +22,7 @@ import useSearchMovies from '../hooks/useSearchMovies';
 import MovieCard from '../components/MovieCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
+import { wp, hp, fp } from '../utils'
 
 const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 const GRID_ITEM_HEIGHT = 220;
@@ -107,7 +108,7 @@ const Home: React.FC<{ navigation: any }> = ({ navigation }) => {
       <View style={styles.header}>
         <Text style={styles.headerTitle}>MOOV MOVIE</Text>
         <TouchableOpacity style={styles.favoriteButton} onPress={() => navigation.navigate('Favorites')}>
-          <Text style={{fontSize: 28, color: 'red'}}>♥</Text>
+          <Text style={{fontSize: fp(3), color: 'red'}}>♥</Text>
         </TouchableOpacity>
       </View>
       {/* Search Bar */}
@@ -140,9 +141,9 @@ const Home: React.FC<{ navigation: any }> = ({ navigation }) => {
               data={searchResults}
               renderItem={renderOverlayItem}
               keyExtractor={(item: Movie) => item.id.toString()}
-              contentContainerStyle={{ paddingBottom: 8, paddingTop: 2 }}
+              contentContainerStyle={{ paddingBottom: hp(1), paddingTop: hp(0.8) }}
               showsVerticalScrollIndicator={false}
-              style={{ maxHeight: 320 }}
+              style={{ maxHeight: hp(50) }}
             />
           )}
         </View>
@@ -161,7 +162,7 @@ const Home: React.FC<{ navigation: any }> = ({ navigation }) => {
         keyExtractor={(item: Movie) => item.id.toString()}
         numColumns={2}
         columnWrapperStyle={styles.gridRow}
-        contentContainerStyle={{ paddingTop: 6, paddingBottom: 80 }}
+        contentContainerStyle={{ paddingTop: hp(1.2), paddingBottom: hp(10) }}
         showsVerticalScrollIndicator={false}
         initialNumToRender={8}
       />
@@ -182,25 +183,25 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingVertical: 15,
+    paddingHorizontal: wp(5),
+    paddingVertical: hp(2),
     backgroundColor: '#fff',
   },
   headerTitle: {
-    fontSize: 24,
+    fontSize: fp(3),
     fontWeight: 'bold',
     color: '#333',
   },
   favoriteButton: {
-    padding: 5,
+    padding: hp(0.7),
   },
   favoriteIcon: {
-    fontSize: 24,
+    fontSize: fp(3),
     color: 'red',
   },
   searchContainer: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
+    paddingHorizontal: wp(3),
+    paddingVertical: hp(0.8),
     backgroundColor: '#fff',
     marginTop: 0,
   },
@@ -208,111 +209,111 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#f3f3f3',
-    borderRadius: 10,
-    paddingHorizontal: 8,
-    height: 38,
+    borderRadius: wp(2.5),
+    paddingHorizontal: wp(2),
+    height: hp(5),
   },
   searchIcon: {
-    fontSize: 18,
+    fontSize: fp(2),
     color: '#888',
-    marginRight: 4,
+    marginRight: wp(1),
   },
   searchInput: {
     flex: 1,
-    fontSize: 15,
+    fontSize: fp(1.8),
     paddingVertical: 0,
     color: '#222',
     backgroundColor: 'transparent',
   },
   clearButton: {
-    marginLeft: 4,
-    padding: 2,
+    marginLeft: wp(1),
+    padding: hp(0.3),
   },
   clearIcon: {
-    fontSize: 16,
+    fontSize: fp(1.7),
     color: '#888',
   },
   absoluteOverlayContainer: {
     position: 'absolute',
-    left: 6,
-    right: 6,
-    top: 190, // header + search bar yüksekliği (örnek)
+    left: wp(1.5),
+    right: wp(1.5),
+    top: hp(24),
     backgroundColor: '#f3f0fa',
-    borderRadius: 14,
+    borderRadius: wp(3.5),
     shadowColor: '#7B61FF',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.18,
     shadowRadius: 16,
     elevation: 12,
     zIndex: 20,
-    paddingBottom: 8,
-    paddingTop: 10,
-    paddingHorizontal: 4,
-    maxHeight: 400,
+    paddingBottom: hp(1),
+    paddingTop: hp(1.2),
+    paddingHorizontal: wp(1),
+    maxHeight: hp(50),
   },
   overlayLoading: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 24,
+    paddingVertical: hp(3),
   },
   overlayListItem: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#fff',
-    borderRadius: 12,
-    marginHorizontal: 10,
-    marginVertical: 6,
-    padding: 8,
+    borderRadius: wp(3),
+    marginHorizontal: wp(2.5),
+    marginVertical: hp(0.8),
+    padding: hp(1),
     shadowColor: '#7B61FF',
     shadowOpacity: 0.08,
     shadowRadius: 8,
     elevation: 2,
   },
   overlayPoster: {
-    width: 60,
-    height: 90,
-    borderRadius: 8,
+    width: wp(16),
+    height: hp(12),
+    borderRadius: wp(2),
     backgroundColor: '#eee',
   },
   overlayInfo: {
     flex: 1,
-    marginLeft: 12,
+    marginLeft: wp(3),
     justifyContent: 'center',
   },
   overlayTitleText: {
-    fontSize: 16,
+    fontSize: fp(2),
     fontWeight: 'bold',
     color: '#333',
-    marginBottom: 5,
+    marginBottom: hp(0.7),
   },
   overlayRating: {
-    fontSize: 14,
+    fontSize: fp(1.7),
     color: '#666',
   },
   gridRow: {
     justifyContent: 'space-between',
-    paddingHorizontal: 8,
-    marginBottom: 8,
+    paddingHorizontal: wp(2),
+    marginBottom: hp(1),
   },
   gridItem: {
     width: '48%',
     aspectRatio: 0.68,
-    borderRadius: 12,
+    borderRadius: wp(3),
     overflow: 'hidden',
     backgroundColor: '#eee',
   },
   gridPoster: {
     width: '100%',
     height: '100%',
-    borderRadius: 12,
+    borderRadius: wp(3),
   },
   fab: {
     position: 'absolute',
-    bottom: 80,
-    right: 40,
-    width: 80,
-    height: 80,
-    borderRadius: 45,
+    bottom: hp(10),
+    right: wp(10),
+    width: wp(21),
+    height: wp(21),
+    borderRadius: wp(11.25),
     backgroundColor: '#7B61FF',
     justifyContent: 'center',
     alignItems: 'center',
@@ -323,7 +324,7 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   fabIcon: {
-    fontSize: 40,
+    fontSize: fp(5),
     color: '#fff',
   },
 });

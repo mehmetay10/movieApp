@@ -1,6 +1,7 @@
 // Bu component AI desteği ile geliştirildi (ChatGPT)
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { wp, hp, fp } from '../utils'
 
 interface MovieCardProps {
   movie: {
@@ -31,34 +32,34 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie, onPress, small }) => {
 
 const styles = StyleSheet.create({
   card: {
-    width: 120,
-    marginRight: 12,
-    borderRadius: 10,
+    width: wp(32),
+    marginRight: wp(3),
+    borderRadius: wp(2.5),
     overflow: 'hidden',
     backgroundColor: '#eee',
   },
   cardSmall: {
-    width: 90,
+    width: wp(24),
   },
   poster: {
-    width: 120,
-    height: 180,
-    borderRadius: 10,
+    width: wp(32),
+    height: hp(24),
+    borderRadius: wp(2.5),
   },
   posterSmall: {
-    width: 90,
-    height: 130,
+    width: wp(24),
+    height: hp(17),
   },
   title: {
-    fontSize: 14,
+    fontSize: fp(1.7),
     fontWeight: 'bold',
     color: '#222',
-    marginTop: 6,
+    marginTop: hp(0.7),
     textAlign: 'center',
-    paddingHorizontal: 4,
+    paddingHorizontal: wp(1),
   },
   titleSmall: {
-    fontSize: 12,
+    fontSize: fp(1.3),
   },
 });
 
