@@ -14,7 +14,7 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'MovieApp' do
+target 'MoovMovie' do
   config = use_native_modules!
 
   use_react_native!(
@@ -23,7 +23,7 @@ target 'MovieApp' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'MovieAppTests' do
+  target 'MoovMovieTests' do
     inherit! :complete
     # Pods for testing
   end
